@@ -1,0 +1,116 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #f8f6f6, #feb47b); /* Animated gradient background */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animation for the gradient background */
+  }
+  
+  /* Centering the container with padding */
+  .stopwatch-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Solid white background for the stopwatch container */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    height: auto;
+  }
+  .heading{
+    text-decoration-color: #f8f6f6;
+    color: #fa644a ;
+    font-style: oblique;
+  }
+  /* Animated background pulse effect for the display */
+  .display {
+    background: linear-gradient(#ff7e5f, #feb47b); /* Solid gradient color */
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite ease-in-out; /* Animation to make the display pulse */
+  }
+  
+  #time {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease; /* Smooth transition for time updates */
+  }
+  
+  /* Styling for buttons with animations */
+  .buttons button {
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    background-color: #007BFF; /* Solid blue color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Button hover effect: scaling and background color change */
+  .buttons button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: scale(1.1); /* Slight grow effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adding a shadow on hover */
+  }
+  
+  /* Button active effect: shrinking when clicked */
+  .buttons button:active {
+    transform: scale(0.95); /* Shrink on click */
+  }
+  
+  /* Styling for lap times */
+  #laps {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  #lapList li {
+    font-size: 18px;
+    list-style-type: none;
+  }
+  
+  /* Keyframes for pulsating animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.05); /* Slight grow effect */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Animation for the gradient background */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 10% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 10% 50%;
+    }
+  }
+  

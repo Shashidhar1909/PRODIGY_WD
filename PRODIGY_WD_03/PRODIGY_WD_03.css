@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    width: 400px;
+    
+}
+.shashi{
+    position: relative;
+    right: 45px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#gameMode button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#gameMode button:hover {
+    background-color: #45a049;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.cell.X {
+    color: #ff4081; /* Pink for player X */
+}
+
+.cell.O {
+    color: #3f51b5; /* Blue for player O */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#status {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+#status.winning {
+    color: #ff9800; /* Color change for the winner message */
+    animation: celebration 2s ease-out forwards;
+}
+
+@keyframes celebration {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.6);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Confetti animation */
+@keyframes confetti {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.confetti {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: random;
+    animation: confetti 1s infinite linear;
+    pointer-events: none;
+}
